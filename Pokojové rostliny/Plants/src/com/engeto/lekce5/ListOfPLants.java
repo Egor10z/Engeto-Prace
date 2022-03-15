@@ -1,14 +1,12 @@
 package com.engeto.lekce5;
 
 import java.io.*;
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 
-class ListOfPlants {
+public class ListOfPlants {
 
 
     private List<Plant> listOfPlants = new ArrayList<Plant>();
@@ -36,11 +34,11 @@ class ListOfPlants {
                     try {
                         this.addPlant(Plant.parsePlant(record, delimiter));
                     } catch (PlantException e){
-                    throw new PlantException("Chybný soubor!");
+                        throw new PlantException("Chybný soubor na řádku: "+lineNumber+" -> "+ e.getLocalizedMessage());
                 }
                 }
-            } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
+            } catch (FileNotFoundException e) {
+            throw new PlantException("Vstupní soubor "+filename+" nebyl nalezen: "+e.getLocalizedMessage());
         }
 
 
