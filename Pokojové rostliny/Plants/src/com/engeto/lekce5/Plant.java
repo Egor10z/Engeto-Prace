@@ -15,9 +15,7 @@ public class Plant {
     int frequencyOfWatering;
 
     public  Plant(String name) {
-        this.name = name;
-        this.frequencyOfWatering = 7;
-        this.planted = LocalDate.now();
+        this(name, 7, LocalDate.now());
     }
 
     public Plant(String name, String notes,int frequencyOfWatering, LocalDate planted, LocalDate watering) {
@@ -29,11 +27,7 @@ public class Plant {
 
     }
     public Plant(String name, int frequencyOfWatering, LocalDate planted) {
-        this.name = name;
-        this.notes = " ";
-        this.frequencyOfWatering = frequencyOfWatering;
-        this.watering = LocalDate.now();
-        this.planted = planted;
+        this(name,"",frequencyOfWatering,LocalDate.now(),planted);
     }
 
 
