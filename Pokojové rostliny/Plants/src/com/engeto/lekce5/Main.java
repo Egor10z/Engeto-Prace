@@ -18,7 +18,8 @@ public class Main {
         try {
             plants.loadFromFile(FILENAME,DELIMITER);
         } catch (PlantException e) {
-                e.printStackTrace();
+            e.printStackTrace();
+        }
 
 
             for (Plant plant : plants.getAllPlants()) {
@@ -37,5 +38,5 @@ public class Main {
 
         }
 
-    }}
+    }
 
