@@ -29,7 +29,6 @@ class ListOfPlants {
 
     public void loadFromFile(String filename, String delimiter) throws PlantException {
         try (Scanner scanner = new Scanner(new BufferedReader(new FileReader(filename)))) {
-            while (scanner.hasNextLine()) {
                 int lineNumber = 0;
                 while (scanner.hasNextLine()) {
                     String record = scanner.nextLine();
@@ -40,9 +39,8 @@ class ListOfPlants {
                     throw new PlantException("Chybný soubor!");
                 }
                 }
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
         }
 
 
