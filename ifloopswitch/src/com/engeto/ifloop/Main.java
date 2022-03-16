@@ -31,8 +31,8 @@ public class Main {
      * Jakmile uživatel zadá záporné číslo, metoda skončí.
      */
     public static void readIntsFromInputAndPrintItUntilNegative() {
-        int input = Support.safeReadInt();
-        while (input >= 0){
+        int input;
+        while ((input = Support.safeReadInt()) >= 0){
             System.out.println(input);
         }
 
@@ -48,10 +48,10 @@ public class Main {
 
 
         int soucet = 0;
-        int input = 0;
-        while (input > 0){
-            soucet = soucet + input;
-            input = Support.safeReadInt();
+        int input;
+        while ((input = Support.safeReadInt()) > 0){
+            soucet += input;
+
         }
         return soucet;
 
@@ -66,9 +66,8 @@ public class Main {
      */
     public static List storeAllInputInArrayListUntilNegative() {
         List<Integer> listOfNumbers= new ArrayList<>();
-        int input = 0;
-        while (input > 0){
-            input = Support.safeReadInt();
+        int input;
+        while ((input = Support.safeReadInt()) > 0){
             listOfNumbers.add(input);
         }
 
@@ -111,7 +110,7 @@ public class Main {
     public static void printIntegersUnderLimit(List<Integer> list, int limit) {
 
         for (Integer i :list) {
-            while ( i < limit) {
+            if ( i < limit) {
                 System.out.println(i);
             }
         }
